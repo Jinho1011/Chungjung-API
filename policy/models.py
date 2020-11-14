@@ -9,9 +9,10 @@ class Policy(models.Model):
     edu = models.ForeignKey('Education', on_delete=models.CASCADE)
     age = models.CharField(max_length=30)
     # 19-34, if 0: apply for all
-    state = models.ForeignKey('State', on_delete=models.CASCADE)
+    state = models.CharField(max_length=1000, default="")
     benefits = models.CharField(max_length=1000)
     desc = models.CharField(max_length=1000)
+    url = models.CharField(max_length=1000, default="")
 
     def __str__(self):
         return self.title
@@ -19,7 +20,3 @@ class Policy(models.Model):
 
 class Education(models.Model):
     education = models.CharField(max_length=30)
-
-
-class State(models.Model):
-    stat = models.CharField(max_length=30)

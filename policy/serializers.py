@@ -1,21 +1,14 @@
 from rest_framework import serializers
-from .models import Policy, Education, State
+from .models import Policy, Education
 
 
 class PolicySerializer(serializers.ModelSerializer):
     class Meta:
         model = Policy
-        fields = ('category', 'title', 'sex', 'region',
-                  'edu', 'age',  'state', 'benefits', 'desc')
+        fields = '__all__'
 
 
 class EducationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Education
-        fields = ('edycation')
-
-
-class StateSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = State
-        fields = ('stat')
+        fields = '__all__'

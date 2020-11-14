@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from .serializers import PolicySerializer, StateSerializer, EducationSerializer
-from .models import Policy, Education, State
+from .serializers import PolicySerializer, EducationSerializer
+from .models import Policy, Education
 
 
 class PolicyViewSet(viewsets.ModelViewSet):
@@ -11,8 +11,3 @@ class PolicyViewSet(viewsets.ModelViewSet):
 class EducationViewSet(viewsets.ModelViewSet):
     queryset = Education.objects.all()
     serializer_class = EducationSerializer
-
-
-class StateViewSet(viewsets.ModelViewSet):
-    queryset = State.objects.all()
-    serializer_class = StateSerializer
